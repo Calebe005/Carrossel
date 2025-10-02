@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html,body{
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+body{
+    background-image: url(../img/5803438.jpg);
+    background-size: cover;
+    
+}
+.carrosel{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 80vh;
+    outline: 3px solid rgba(205, 205, 205, 0.132);
+    background-color: #32136123;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+}
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 40%;
+    height: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
+    background-color: rgba(253, 253, 253, 0.103);
+    backdrop-filter: blur(40px);
+    outline: 3px solid rgba(205, 205, 205, 0.132);
+   
+}
+.carosel .cards .box:nth-child(2){
+    transition: all 2s linear;
+}
+.box>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 5%;
+    align-items: center;
+    transform: translateX(-125px);
+}
+
+.cards > *:not(:nth-child(2)){
+    filter: blur(2px);
+    scale: 0.8;
+    
+}
+
+.status{
+    position: absolute;
+    width: 20%;
+    border-radius: 30px;
+    height: 1em;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: 3.5%;
+}
+.bola{
+    position: relative;
+    width: 0.8em;
+    height: 80%;
+    background-color: rgb(247, 247, 247);
+    border-radius: 50%;
+   
+}
+.bola.first{
+    background-color:transparent;
+    border: 2px solid rgb(164, 144, 184);
+}
+
+.carrosel.next .cards .box:nth-child(1),
+.carrosel.next .cards .box:nth-child(2),
+.carrosel.next .cards .box:nth-child(3){
+    animation: next1 .2s linear forwards;
+}
+@keyframes next1{
+    from{
+        transform: translateX(400px);
+    }
+}
